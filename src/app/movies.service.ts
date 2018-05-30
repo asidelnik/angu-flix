@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './movie';
+import { User } from './user';
 
 const MOVIES = [
    { id: 0, img: "http://static.comicvine.com/uploads/original/10/104544/4068923-tarzan-wallpaper-walt-disneys-tarzan-6248938-1024-768.jpg", title: "Tarzan", price: 3, year: 1999, descrShort: "The movie is about the life of Tarzan. Tarzan was a small orphan who was raised by an ape named Kala since he was a child. He believed that this was his family, but on an expedition Jane Porter is rescued by Tarzan." },
@@ -22,29 +23,41 @@ export class MoviesService {
    getMovies() : Movie[] {
       return MOVIES;
     }
+
+    getChosenMovies() : Movie[] {
+       return this.chosenMovies;
+    }
   
    //  getMoive(id : number) {
    //    return this.getMovies().find((movie) => movie.id == id);
    //  }
 
-   addMovie(movie) {
+   addMovieServ(movie) {
       if(this.budget >= movie.price) {
          this.chosenMovies.push(movie);
+         this.budget -= movie.price;
+
+         // console.log("service - addMovieServ() working");
+         // console.log("added movie: ");
+         // console.log(movie);
+         // console.log(this.chosenMovies);
+         
       } else {
          // Show "You're out of money =[ Can't buy any more movies. Refresh the page to get your $9 back."
          // Either from service or the service activates a method in another comp
       }
-      
    }
-   removeChosen(id) {
+
+   removeMovieServ(id, price) {
       for (let index = 0; index < MOVIES.length; index++) {
          if (MOVIES[index].id == id) {
             this.chosenMovies.splice(index, 1);
+            this.budget += price;
          }
       }
    }
 
-   reduceBudget(moviePrice) {
-      this.budget -= moviePrice;
-   }
+   // reduceBudget(moviePrice) {
+   //    this.budget -= moviePrice;
+   // }
 }
