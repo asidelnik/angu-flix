@@ -19,6 +19,7 @@ export class MoviesComponent implements OnInit {
    }
 
    addMovie(movie) {
+      console.log("movies:");      
       this.moviesService.addMovieServ(movie);
    }
 

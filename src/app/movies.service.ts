@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Movie } from './movie';
 import { User } from './user';
 
+
 const MOVIES = [
    { id: 0, img: "http://static.comicvine.com/uploads/original/10/104544/4068923-tarzan-wallpaper-walt-disneys-tarzan-6248938-1024-768.jpg", title: "Tarzan", price: 3, year: 1999, descrShort: "The movie is about the life of Tarzan. Tarzan was a small orphan who was raised by an ape named Kala since he was a child. He believed that this was his family, but on an expedition Jane Porter is rescued by Tarzan." },
    { id: 1, img: "http://cdn.collider.com/wp-content/uploads/2016/04/the-lion-king-image.jpg", title: "The Lion King", year: 1994, price: 2, descrShort: "A young lion Prince is cast out of his pride by his cruel uncle, who claims he killed his father. While the uncle rules with an iron paw, the prince grows up beyond the Savannah, living by a philosophy: No worries for the rest of your days." },
@@ -16,7 +17,8 @@ const MOVIES = [
 
 export class MoviesService {
    chosenMovies: Array<Movie> = new Array<Movie>();
-   budget: number = 10;
+   user = new User("Amos", 10);
+   
 
    constructor() { }
 
@@ -27,15 +29,24 @@ export class MoviesService {
     getChosenMovies() : Movie[] {
        return this.chosenMovies;
     }
+   
+    getBudget() {
+      return this.user.budget;
+    }
   
    //  getMoive(id : number) {
    //    return this.getMovies().find((movie) => movie.id == id);
    //  }
 
    addMovieServ(movie) {
-      if(this.budget >= movie.price) {
+      if(this.user.budget >= movie.price) {
          this.chosenMovies.push(movie);
-         this.budget -= movie.price;
+         this.user.budget -= movie.price;
+         
+         
+         console.log("service - user.budget: ");
+         console.log(this.user.budget);
+         
 
          // console.log("service - addMovieServ() working");
          // console.log("added movie: ");
@@ -52,7 +63,7 @@ export class MoviesService {
       for (let index = 0; index < MOVIES.length; index++) {
          if (MOVIES[index].id == id) {
             this.chosenMovies.splice(index, 1);
-            this.budget += price;
+            this.user.budget += price;
          }
       }
    }
