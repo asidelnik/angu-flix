@@ -5,16 +5,23 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+
+
 
 import { AppComponent } from './app.component';
+import { MoviesService } from './movies.service';
 import { MoviesComponent } from './movies/movies.component';
 import { ChosenMoviesComponent } from './chosen-movies/chosen-movies.component';
+import { FiltersComponent } from './filters/filters.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
-    ChosenMoviesComponent
+    ChosenMoviesComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +30,10 @@ import { ChosenMoviesComponent } from './chosen-movies/chosen-movies.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

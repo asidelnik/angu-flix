@@ -19,6 +19,14 @@ export class MoviesService {
 
    constructor() { }
 
+   getMovies() : Movie[] {
+      return MOVIES;
+    }
+  
+   //  getMoive(id : number) {
+   //    return this.getMovies().find((movie) => movie.id == id);
+   //  }
+
    addMovie(movie) {
       if(this.budget >= movie.price) {
          this.chosenMovies.push(movie);

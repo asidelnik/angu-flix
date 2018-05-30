@@ -3,6 +3,13 @@
    // grid-template-columns: 75% 25%;
 
     h3 {
-       font-size: 20px;
+       font-size: 18px;
+    }
+    
+    input {
+       font-size: 15px;
+    }
+    input::placeholder {
+      font-size: 15px;
     }
 }

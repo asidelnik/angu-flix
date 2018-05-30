@@ -6,6 +6,6 @@ export class Movie {
    public price: number;
    public year: number;
    public descrShort: string;
-   constructor() {}
+   constructor() { }
 }
 
