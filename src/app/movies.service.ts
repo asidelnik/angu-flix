@@ -18,8 +18,14 @@ export class MoviesService {
 
    constructor() { }
 
-   addChosen(movie) {
-      this.chosenMovies.push(movie);
+   addMovie(movie) {
+      if(this.budget >= movie.price) {
+         this.chosenMovies.push(movie);
+      } else {
+         // Show "You're out of money =[ Can't buy any more movies. Refresh the page to get your $9 back."
+         // Either from service or the service activates a method in another comp
+      }
+      
    }
    removeChosen(id) {
       for (let index = 0; index < MOVIES.length; index++) {
