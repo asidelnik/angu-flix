@@ -1,4 +1,4 @@
-export default class Movie {
+export class Movie {
 
    public id: number;
    public img: string;
