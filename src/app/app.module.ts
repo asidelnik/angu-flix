@@ -14,6 +14,7 @@ import { MoviesService } from './movies.service';
 import { MoviesComponent } from './movies/movies.component';
 import { ChosenMoviesComponent } from './chosen-movies/chosen-movies.component';
 import { FiltersComponent } from './filters/filters.component';
+import { MovieCardComponent } from './movie-card/movie-card.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FiltersComponent } from './filters/filters.component';
     AppComponent,
     MoviesComponent,
     ChosenMoviesComponent,
-    FiltersComponent
+    FiltersComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,
