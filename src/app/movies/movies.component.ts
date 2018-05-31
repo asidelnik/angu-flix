@@ -18,9 +18,9 @@ export class MoviesComponent implements OnInit {
    ngOnInit() {
    }
 
-   addMovie(movie) {
-      console.log("movies:");      
-      this.moviesService.addMovieServ(movie);
-   }
+//    addMovie(movie) {
+//       console.log("movies:");      
+//       this.moviesService.addMovieServ(movie);
+//    }
 
 }

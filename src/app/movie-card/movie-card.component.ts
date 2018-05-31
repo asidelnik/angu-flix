@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MoviesService } from '../movies.service';
 import { Movie } from '../movie';
 
 @Component({
@@ -9,14 +10,16 @@ import { Movie } from '../movie';
 export class MovieCardComponent implements OnInit {
     @Input() movie: Movie;
     // @Input('master') masterName: string;
-  constructor() { }
+  constructor(private moviesService: MoviesService) { }
 
   ngOnInit() {
     //   console.log(this.movie);
   }
   
-//   addMoviePar(movie) {
-//     console.log("movies:");      
-//     this.moviesService.addMovieServ(movie);
-//  }
+  addMovie(movie) {
+    console.log("movie-card movie:");
+    console.log(movie);      
+    this.moviesService.addMovieServ(movie);
+ }
+ 
 }

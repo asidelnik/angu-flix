@@ -44,7 +44,7 @@ export class MoviesService {
          this.user.budget -= movie.price;
          
          
-         console.log("service - user.budget: ");
+         console.log("service - budget: ");
          console.log(this.user.budget);
          
 
