@@ -56,10 +56,6 @@ export class MoviesService {
                 movieNotPurchased = false;
                 alert("movie already purchased");
             }
-            //  else {
-            //     movieNotPurchased = true;
-            //     alert("budget too low");
-            // }
         }
 
         let enoughBudget = this.user.budget >= movie.price;
@@ -79,10 +75,6 @@ export class MoviesService {
             // Either from service or the service activates a method in another comp
         }
     }
-
-    // existsInChosenMovies(movie.id) {
-
-    // }
 
     removeChosenMovieServ(id, price) {
         for (let index = 0; index < MOVIES.length; index++) {
