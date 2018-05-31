@@ -46,8 +46,6 @@ export class MoviesService {
 
 
     addMovieServ(movie) {
-        console.log("service - chosen movies array: ");
-        console.log(this.user.chosenMovies);
 
         let movieNotPurchased = true;
         for (let index = 0; index < this.user.chosenMovies.length; index++) {
