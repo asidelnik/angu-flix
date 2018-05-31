@@ -11,6 +11,7 @@ export class ChosenMoviesComponent implements OnInit {
     // used to be chosenMovies, changed it to be able to bind to movie-card
     movies = new Array<Movie>();
     budget = this.moviesService.user.budget;
+    chosenMoviesComp: boolean = true;
 
     constructor(private moviesService: MoviesService) {
         this.movies = moviesService.getChosenMovies();

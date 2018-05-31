@@ -1,4 +1,5 @@
-<mat-card class="movie-card">    <!--  flex="30" *ngFor="let movie of movies; let idx = index" -->
+<mat-card class="movie-card">
+  <!--  flex="30" *ngFor="let movie of movies; let idx = index" -->
   <!-- | filter:filterTerm-->
   <img src="{{ movie.img }}" alt="{{ movie.img }}" class="movieImg">
   <mat-card-header>
@@ -12,6 +13,13 @@
     <p>{{ movie.price }} $</p>
     <p>{{movie.descrShort}}</p>
   </mat-card-content>
-  <button mat-button (click)="addMovie(movie)" color="primary">Purchase</button>
+
+  <!-- <button mat-button (click)="toggleDate()">
+    <span *ngIf="dateFormat == 'shortDate'">+</span>
+    <span *ngIf="dateFormat == 'fullDate'">-</span>
+  </button> -->
+
+  <button mat-button (click)="addMovie(movie)" ng-if="moviesComp" color="primary">Purchase</button>
+  <button mat-button (click)="removeMovie(movie)" ng-if="chosenMoviesComp" color="warn">Remove</button>
 
 </mat-card>

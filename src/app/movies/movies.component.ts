@@ -10,6 +10,7 @@ import { Movie } from '../movie';
 
 export class MoviesComponent implements OnInit {
    movies = new Array<Movie>();
+   moviesComp: boolean = true;
 
    constructor(private moviesService: MoviesService) {
       this.movies = moviesService.getMovies();

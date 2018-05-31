@@ -50,7 +50,6 @@ export class MoviesService {
         console.log(this.user.chosenMovies);
 
         let movieNotPurchased = true;
-        
         for (let index = 0; index < this.user.chosenMovies.length; index++) {
             if (this.user.chosenMovies[index].id == movie.id) {
                 movieNotPurchased = false;
@@ -62,13 +61,6 @@ export class MoviesService {
         if (movieNotPurchased && enoughBudget) {
             this.user.chosenMovies.push(movie);
             this.user.budget -= movie.price;
-
-            console.log("service - budget: ");
-            console.log(this.user.budget);
-
-            console.log("service - chosen movies:");
-            console.log(this.user.chosenMovies);
-
         } else {
             alert("budget too low");
             // Show "You're out of money =[ Can't buy any more movies. Refresh the page to get your $9 back."
@@ -77,20 +69,37 @@ export class MoviesService {
     }
 
     removeChosenMovieServ(id, price) {
-        for (let index = 0; index < MOVIES.length; index++) {
-            if (MOVIES[index].id == id) {
+        for (let index = 0; index < this.user.chosenMovies.length; index++) {
+            if (this.user.chosenMovies[index].id == id) {
                 this.user.chosenMovies.splice(index, 1);
                 this.user.budget += price;
             }
         }
     }
-
-    // reduceBudget(moviePrice) {
-    //    this.budget -= moviePrice;
-    // }
 }
 
 
+
+
+// console.log("service - budget: ");
+// console.log(this.user.budget);
+
+// console.log("service - chosen movies:");
+// console.log(this.user.chosenMovies);
+
+// removeChosenMovieServ(id, price) {
+//     for (let index = 0; index < MOVIES.length; index++) {
+//         if (MOVIES[index].id == id) {
+//             this.user.chosenMovies.splice(index, 1);
+//             this.user.budget += price;
+//         }
+//     }
+// }
+
+
+ // reduceBudget(moviePrice) {
+    //    this.budget -= moviePrice;
+    // }
 
             //  console.log("service - budget: ");
             //  console.log(this.user.budget);

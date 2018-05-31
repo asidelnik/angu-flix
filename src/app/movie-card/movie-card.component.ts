@@ -22,4 +22,8 @@ export class MovieCardComponent implements OnInit {
         console.log(movie);
         this.moviesService.addMovieServ(movie);
     }
+
+    removeMovie(movie) {
+        this.moviesService.removeChosenMovieServ(movie.id, movie.price);
+    }
 }
