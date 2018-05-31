@@ -23,8 +23,8 @@ export class ChosenMoviesComponent implements OnInit {
    ngOnInit() {
    }
 
-   removeMovie(id, price) {
-      this.moviesService.removeMovieServ(id, price);
+   removeChosenMovie(id, price) {
+      this.moviesService.removeChosenMovieServ(id, price);
    }
 
 }
