@@ -3,25 +3,25 @@ import { MoviesService } from '../movies.service';
 import { Movie } from '../movie';
 
 @Component({
-   selector: 'app-movies',
-   templateUrl: './movies.component.html',
-   styleUrls: ['./movies.component.scss']
+    selector: 'app-movies',
+    templateUrl: './movies.component.html',
+    styleUrls: ['./movies.component.scss']
 })
 
 export class MoviesComponent implements OnInit {
-   movies = new Array<Movie>();
-   moviesComp: boolean = true;
+    movies = new Array<Movie>();
+    moviesComp: boolean = true;
 
-   constructor(private moviesService: MoviesService) {
-      this.movies = moviesService.getMovies();
-   }
+    constructor(private moviesService: MoviesService) {
+        this.movies = moviesService.getMovies();
+    }
 
-   ngOnInit() {
-   }
+    ngOnInit() {
+    }
 
-//    addMovie(movie) {
-//       console.log("movies:");      
-//       this.moviesService.addMovieServ(movie);
-//    }
-
+    handleAddMovie(movie) {
+        console.log("movie-card movie:");
+        console.log(movie);
+        this.moviesService.addMovieServ(movie);
+    }
 }

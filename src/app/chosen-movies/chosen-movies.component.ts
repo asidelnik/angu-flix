@@ -22,13 +22,17 @@ export class ChosenMoviesComponent implements OnInit {
         return this.moviesService.user.budget;
     }
 
-    removeChosenMovie(id, price) {
-        this.moviesService.removeChosenMovieServ(id, price);
-    }
-
     ngOnInit() {
     }
 
-
-
+    handleRemoveMovie(movie) {
+        console.log("movie-card movie:");
+        console.log(movie);
+        this.moviesService.removeChosenMovieServ(movie.id, movie.price);
+    }
 }
+
+
+// removeMovie(movie) {
+//     this.moviesService.removeChosenMovieServ(movie.id, movie.price);
+// }

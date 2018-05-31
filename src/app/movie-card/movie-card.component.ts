@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { MoviesService } from '../movies.service';
 //import { MoviesComponent } from '../movies/movies.component';
 import { Movie } from '../movie';
@@ -10,7 +10,10 @@ import { Movie } from '../movie';
 })
 export class MovieCardComponent implements OnInit {
     @Input() movie: Movie;
+    @Output() movieAdded: EventEmitter<Movie> = new EventEmitter();
+    @Output() movieRemoved: EventEmitter<Movie> = new EventEmitter();
     // @Input('master') masterName: string;
+
     constructor(private moviesService: MoviesService) { }
 
     ngOnInit() {
@@ -18,12 +21,10 @@ export class MovieCardComponent implements OnInit {
     }
 
     addMovie(movie) {
-        console.log("movie-card movie:");
-        console.log(movie);
-        this.moviesService.addMovieServ(movie);
+        this.movieAdded.emit(movie);
     }
 
     removeMovie(movie) {
-        this.moviesService.removeChosenMovieServ(movie.id, movie.price);
+        this.movieRemoved.emit(movie);
     }
 }

@@ -12,7 +12,9 @@
   <div class="list-container">
     <!-- <div class="filter-header" *ngIf="filterTerm?.length > 0">Filtering dogs by name: {{ filterTerm }}</div> -->
     <div class="cards-container" layout-wrap layout="row">
-      <app-movie-card class="movie-card" flex="30" *ngFor="let movie of movies; let idx = index" [movie]="movie"></app-movie-card>
+      <app-movie-card class="movie-card" flex="30" 
+      *ngFor="let movie of movies; let idx = index" [movie]="movie" 
+      (movieAdded)="handleAddMovie($event)"></app-movie-card>
 
       <!-- <app-hero-child *ngFor="let hero of heroes" [hero]="hero" [master]="master"></app-hero-child> -->
 
