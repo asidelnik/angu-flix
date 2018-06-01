@@ -6,7 +6,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
-
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -15,6 +16,11 @@ import { MoviesComponent } from './movies/movies.component';
 import { ChosenMoviesComponent } from './chosen-movies/chosen-movies.component';
 import { FiltersComponent } from './filters/filters.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { FilterPipe } from './filter.pipe';
+
+const routes: Routes = [
+    { path: '', component: MoviesComponent}
+  ];
 
 
 @NgModule({
@@ -23,7 +29,8 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     MoviesComponent,
     ChosenMoviesComponent,
     FiltersComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -33,8 +40,11 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
+  exports: [RouterModule],
   providers: [MoviesService],
   bootstrap: [AppComponent]
 })
