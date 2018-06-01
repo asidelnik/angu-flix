@@ -9,7 +9,7 @@ import { Movie } from '../movie';
     styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent implements OnInit {
-    @Input() movie: Movie;
+    @Input() movie: Movie;  
     @Output() movieAdded: EventEmitter<Movie> = new EventEmitter();
     @Output() movieRemoved: EventEmitter<Movie> = new EventEmitter();
     // @Input('master') masterName: string;
