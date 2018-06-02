@@ -1,0 +1,37 @@
+//@import "@material/top-app-bar/mdc-top-app-bar";
+// $mdc-top-app-bar-ink-color: #e30425;
+
+.content-container {
+    display: grid;
+ 
+     h3 {
+        font-size: 20px;
+        font-weight: 300;
+     }
+     mat-toolbar {
+        background-color: white;
+
+        .spacer {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+        }
+     }
+     
+
+ }
+ 
+ .fill-remaining-space {
+    flex: 1 1 auto;
+ }
+ 
+// .mdc-top-app-bar-ink-color($color) {
+    
+// }
+
+
+
+// @mixin mdc-top-app-bar-ink-color($color) {
+//     // write the css here
+//     color: $color;
+// }

@@ -7,6 +7,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
+import { MdcAppBarModule } from '@angular-mdc/web';
+// import {MDCTopAppBar} from '@material/top-app-bar/index';
+
 // import { Routes, RouterModule } from '@angular/router';
 
 
@@ -18,6 +21,8 @@ import { FiltersComponent } from './filters/filters.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { FilterPipe } from './filter.pipe';
 import { AppRoutingModule } from './/app-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { GalleryHeaderComponent } from './gallery-header/gallery-header.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,9 @@ import { AppRoutingModule } from './/app-routing.module';
     ChosenMoviesComponent,
     FiltersComponent,
     MovieCardComponent,
-    FilterPipe
+    FilterPipe,
+    HeaderComponent,
+    GalleryHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,8 @@ import { AppRoutingModule } from './/app-routing.module';
     MatInputModule,
     MatCardModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MdcAppBarModule
   ],
   
   providers: [MoviesService],
