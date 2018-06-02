@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { Movie } from '../movie';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
@@ -10,13 +10,15 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
     styleUrls: ['./movies.component.scss']
 })
 
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit, OnDestroy {
     movies = new Array<Movie>();
     moviesComp: boolean = true;
-    filterTerm: string;
+    filterTerm: string = "";
+    title = {title: "Choose movies"};
 
     constructor(private moviesService: MoviesService, private route: ActivatedRoute, private router: Router) {
         this.movies = moviesService.getMovies();
+        // this.title = "Choose movies";
     }
 
     ngOnInit() {
@@ -25,11 +27,12 @@ export class MoviesComponent implements OnInit {
         });
     }
 
-    onFilterChanged(filterString) {
-        this.router.navigate(['.'], { queryParams: { name: filterString } });
-    }
-
     handleAddMovie(movie) {
         this.moviesService.addMovieServ(movie);
     }
+
+    ngOnDestroy() {
+        this.filterTerm = "";
+    }
+
 }

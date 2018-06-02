@@ -12,9 +12,11 @@ export class ChosenMoviesComponent implements OnInit {
     movies = new Array<Movie>();
     // budget = this.moviesService.user.budget;
     chosenMoviesComp: boolean = true;
+    title = {title: "Choosen movies"};
 
     constructor(private moviesService: MoviesService) {
         this.movies = moviesService.getChosenMovies();
+        // this.title = "Choosen movies";
         // this.budget = this.moviesService.getBudget();
     }
 

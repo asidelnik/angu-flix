@@ -1,6 +1,6 @@
 <div class="content-container">
   <mat-toolbar>
-    <h3>Choose movies</h3>
+    <h3>{{title.title}}</h3>
     <span class="spacer"></span>
     <app-filters [filterString]="filterTerm" (filterChanged)="onFilterChanged($event)"></app-filters>
   </mat-toolbar>
@@ -8,6 +8,8 @@
 
 
 
+
+<!-- Material design - mdc - better use regular html templates -->
 <!-- <header class="mdc-top-app-bar">
   <div class="mdc-top-app-bar__row">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
