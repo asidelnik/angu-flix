@@ -10,17 +10,19 @@ import { Movie } from '../movie';
 export class ChosenMoviesComponent implements OnInit {
     // used to be chosenMovies, changed it to be able to bind to movie-card
     movies = new Array<Movie>();
-    budget = this.moviesService.user.budget;
+    // budget = this.moviesService.user.budget;
     chosenMoviesComp: boolean = true;
+    title = {title: "Choosen movies"};
 
     constructor(private moviesService: MoviesService) {
         this.movies = moviesService.getChosenMovies();
-        this.budget = this.moviesService.getBudget();
+        // this.title = "Choosen movies";
+        // this.budget = this.moviesService.getBudget();
     }
 
-    getBudget() {
-        return this.moviesService.user.budget;
-    }
+    // getBudget() {
+    //     return this.moviesService.user.budget;
+    // }
 
     ngOnInit() {
     }

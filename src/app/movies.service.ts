@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Movie } from './movie';
 import { User } from './user';
 
@@ -16,7 +17,7 @@ const MOVIES = [
 })
 
 export class MoviesService {
-    // chosenMovies: Array<Movie> = new Array<Movie>();
+    chosenMovies: Array<Movie> = new Array<Movie>();
     user = new User("Amos", 10, new Array<Movie>());
 
 
@@ -33,17 +34,6 @@ export class MoviesService {
     getBudget() {
         return this.user.budget;
     }
-
-    //  getMoive(id : number) {
-    //    return this.getMovies().find((movie) => movie.id == id);
-    //  }
-
-
-    /* Disable purchasing the same movie twice
-         1. Remove movie from movie list
-    */
-
-
 
     addMovieServ(movie) {
 
@@ -78,32 +68,3 @@ export class MoviesService {
 
 
 
-
-// console.log("service - budget: ");
-// console.log(this.user.budget);
-
-// console.log("service - chosen movies:");
-// console.log(this.user.chosenMovies);
-
-// removeChosenMovieServ(id, price) {
-//     for (let index = 0; index < MOVIES.length; index++) {
-//         if (MOVIES[index].id == id) {
-//             this.user.chosenMovies.splice(index, 1);
-//             this.user.budget += price;
-//         }
-//     }
-// }
-
-
- // reduceBudget(moviePrice) {
-    //    this.budget -= moviePrice;
-    // }
-
-            //  console.log("service - budget: ");
-            //  console.log(this.user.budget);
-
-
-            // console.log("service - addMovieServ() working");
-            // console.log("added movie: ");
-            // console.log(movie);
-            // console.log(this.chosenMovies);

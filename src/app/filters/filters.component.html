@@ -1,16 +1,8 @@
 <!-- Filters Component-->
 <div class="content-container">
-  <mat-toolbar>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="filterString" (ngModelChange)="changeFilter()" placeholder="Movie title" name="movie" />
-      </mat-form-field>
-
-      <!-- <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="filterTerm" (ngModelChange)="onFilterChanged()" placeholder="Year" name="year" />
-      </mat-form-field> -->
-
-    </form>
-    <span class="fill-remaining-space" color="accent"></span>
-  </mat-toolbar>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">    
+      <input matInput [(ngModel)]="filterString" (ngModelChange)="changeFilter()" placeholder="Search by title" name="movie" />
+    </mat-form-field>
+  </form>
 </div>

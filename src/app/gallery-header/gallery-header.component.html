@@ -1,0 +1,23 @@
+<div class="content-container">
+  <mat-toolbar>
+    <h3>{{title.title}}</h3>
+    <span class="spacer"></span>
+    <app-filters [filterString]="filterTerm" (filterChanged)="onFilterChanged($event)"></app-filters>
+  </mat-toolbar>
+</div>
+
+
+
+
+<!-- Material design - mdc - better use regular html templates -->
+<!-- <header class="mdc-top-app-bar">
+  <div class="mdc-top-app-bar__row">
+    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      
+      <span class="mdc-top-app-bar__title">Choose movies</span>
+      <mdc-app-bar-section align="end">
+            <app-filters [filterString]="filterTerm" (filterChanged)="onFilterChanged($event)"></app-filters>
+        </mdc-app-bar-section>
+    </section>
+  </div>
+</header> -->

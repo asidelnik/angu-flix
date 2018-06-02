@@ -1,14 +1,4 @@
-<div class="content-container">
-  <!-- Title -->
-  <mat-toolbar>
-    <h3>Purchased Movies</h3>
-    <h3>My budget: {{getBudget()}}</h3>
-    <span class="fill-remaining-space" color="accent"></span>
-  </mat-toolbar>
-</div>
-
-<!-- Filter Inputs -->
-<app-filters></app-filters>
+<app-gallery-header [title]="title"></app-gallery-header>
 
 <div class="container">
   <div class="list-container">
@@ -20,46 +10,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="container">
-  <div class="list-container">
-    <div class="filter-header" *ngIf="filterTerm?.length > 0">Filtering dogs by name: {{ filterTerm }}</div>
-    <div class="cards-container" layout-wrap layout="row">
-      <mat-card flex="30" *ngFor="let chosenMovie of choseMovies; let idx = index" class="movie-card">
-        <img src="{{ chosenMovies.img }}" alt="{{ chosenMovies.img }}" class="movieImg">
-        <mat-card-header>
-          <mat-card-title>
-            <h3>{{chosenMovies.title}}</h3>
-          </mat-card-title>
-        </mat-card-header>
-
-        <mat-card-content>
-          <p>{{ chosenMovies.year }}</p>
-          <p>{{chosenMovies.descrShort}}</p>
-        </mat-card-content>
-        <button mat-button (click)="removeChosenMovie(chosenMovie.id, chosenMovie.price)" color="primary">Remove</button>
-
-      </mat-card>
-    </div>
-  </div>
-</div> -->
-
-<!-- <div class="content-container">
-  <mat-toolbar>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Movie title" name="name">
-        [(ngModel)]="addOwnerName"
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Year" name="age">
-        [(ngModel)]="ownerAge"
-      </mat-form-field>
-
-    </form>
-    <span class="fill-remaining-space" color="accent"></span>
-  </mat-toolbar>
-</div> -->
-
-<!-- Chosen movies list -->
